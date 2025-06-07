@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Arcade Classics</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-slate-200">
+
+    <nav class="bg-black p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <a href="#home" class="text-yellow-400 text-2xl hover:text-yellow-300 transition-colors">RetroArcade</a>
+            <button id="nav-toggle" class="text-white inline-flex p-2 hover:bg-gray-700 rounded lg:hidden ml-auto">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            <div class="hidden w-full lg:inline-flex lg:flex-grow lg:w-auto" id="nav-content">
+                <ul class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+                    <li class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-gray-700 hover:text-yellow-400 transition-colors"><a href="#home">Home</a></li>
+                    <li class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-gray-700 hover:text-yellow-400 transition-colors"><a href="#pacman">Pac-Man</a></li>
+                    <li class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-gray-700 hover:text-yellow-400 transition-colors"><a href="#spaceinvaders">Space Invaders</a></li>
+                    <li class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-gray-700 hover:text-yellow-400 transition-colors"><a href="#donkeykong">Donkey Kong</a></li>
+                    <li class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-300 items-center justify-center hover:bg-gray-700 hover:text-yellow-400 transition-colors"><a href="#facts">Arcade Facts</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section py-20 md:py-32" style="background-image: url('https://placehold.co/1920x1080/000000/808080?text=Retro+Gaming+Background');">
+        <div class="container mx-auto px-4 text-center bg-black bg-opacity-50 p-10 rounded-lg">
+            <h1 class="text-4xl md:text-6xl font-bold text-yellow-400 mb-4">Retro Arcade Classics</h1>
+            <p class="text-xl md:text-2xl mb-8">Journey Back to the Golden Age of Gaming!</p>
+            <div class="mt-8 flex justify-center">
+                <div class="joystick-icon animated-joystick"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section id="pacman" class="game-card mb-16 p-6 bg-gray-800 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <h2 class="text-3xl font-bold text-yellow-500 mb-6 text-center">Pac-Man</h2>
+            <div class="md:flex md:items-center md:space-x-6">
+                <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                    <div class="pacman-icon animated-chomp"></div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="mb-4"><strong>Released:</strong> 1980 by Namco</p>
+                    <p class="mb-4">Pac-Man is a maze arcade game developed and released by Namco in 1980. The player controls Pac-Man, who must eat all the dots inside an enclosed maze while avoiding four colored ghosts.</p>
+                    <p class="text-sm text-yellow-400">Waka-waka-waka!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="spaceinvaders" class="game-card mb-16 p-6 bg-gray-800 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">Space Invaders</h2>
+            <div class="md:flex md:items-center md:space-x-6">
+                <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                    <div class="space-invader-icon animated-float">👾</div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="mb-4"><strong>Released:</strong> 1978 by Taito</p>
+                    <p class="mb-4">Space Invaders is a 1978 shoot 'em up arcade game developed by Tomohiro Nishikado. It was manufactured and sold by Taito in Japan.</p>
+                    <p class="text-sm text-green-400">Defend the Earth!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="donkeykong" class="game-card mb-16 p-6 bg-gray-800 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <h2 class="text-3xl font-bold text-red-500 mb-6 text-center">Donkey Kong</h2>
+            <div class="md:flex md:items-center md:space-x-6">
+                <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                    <div class="donkey-kong-icon animated-jump">🦍</div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="mb-4"><strong>Released:</strong> 1981 by Nintendo</p>
+                    <p class="mb-4">Donkey Kong is an arcade game released by Nintendo in 1981. It is an early example of the platform game genre, as the gameplay focuses on maneuvering the main character across a series of platforms while dodging and jumping over obstacles.</p>
+                    <p class="text-sm text-red-400">Save Pauline!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="facts" class="p-8 bg-gray-800 rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-bold text-blue-500 mb-8 text-center">Arcade Flashbacks: Did You Know?</h2>
+            <ul class="space-y-4 text-gray-300 list-none md:columns-2 gap-x-8">
+                <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">Golden Era:</strong> The late '70s to mid-'80s was the arcade golden age.</li>
+                <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">Pac-Man Fever:</strong> Pac-Man generated over $2.5 billion in quarters by the 1990s.</li>
+                <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">Coin Shortage:</strong> Space Invaders caused a 100-yen coin shortage in Japan.</li>
+                <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">Kill Screens:</strong> Some games had "kill screens," unbeatable levels due to bugs.</li>
+                <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">Atari's Start:</strong> Pong (1972) was Atari's first major arcade hit.</li>
+                <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">High Score King:</strong> Billy Mitchell was famous for high scores in games like Pac-Man and Donkey Kong.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer text-center mt-12 border-t border-gray-700">
+        <div class="container mx-auto">
+            <div class="flex justify-center mb-4">
+                 <div class="joystick-icon-small animated-joystick-footer"></div>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; <span id="currentYear"></span> Retro Arcade Classics. All pixels reserved.</p>
+            <p class="text-gray-600 text-xs mt-2">For demonstration purposes only. No actual games playable here (yet!).</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navContent = document.getElementById('nav-content');
+
+        if (navToggle && navContent) {
+            navToggle.addEventListener('click', function() {
+                navContent.classList.toggle('hidden');
+            });
+        }
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
