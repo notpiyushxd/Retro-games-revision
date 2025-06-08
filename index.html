@@ -93,9 +93,49 @@
                 <li class="mb-3 p-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"><strong class="text-blue-400">High Score King:</strong> Billy Mitchell was famous for high scores in games like Pac-Man and Donkey Kong.</li>
             </ul>
         </section>
+
+        <section id="faq" class="py-12 bg-gray-800 rounded-xl shadow-2xl mt-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-purple-400 mb-10 text-center">F.A.Q. - Player\'s Guide</h2>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    
+                    <div class="faq-item bg-gray-700 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left text-xl text-yellow-400 hover:text-yellow-300 focus:outline-none">
+                            <span>What is this website about?</span>
+                            <svg class="faq-icon w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer hidden p-4 pt-0 text-gray-300">
+                            <p>This website is a tribute to the golden age of arcade gaming, showcasing classics like Pac-Man, Space Invaders, and Donkey Kong. It\'s a nostalgic trip down memory lane designed to celebrate these iconic games!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gray-700 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left text-xl text-yellow-400 hover:text-yellow-300 focus:outline-none">
+                            <span>Can I actually play these games here?</span>
+                            <svg class="faq-icon w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer hidden p-4 pt-0 text-gray-300">
+                            <p>Not at the moment! This site is primarily a visual showcase and a source of information about these retro classics. Think of it as a digital museum exhibit. Who knows what the future holds, though!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gray-700 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center p-4 text-left text-xl text-yellow-400 hover:text-yellow-300 focus:outline-none">
+                            <span>Where do the game facts come from?</span>
+                            <svg class="faq-icon w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer hidden p-4 pt-0 text-gray-300">
+                            <p>The facts and information presented are gathered from various reputable sources on video game history and retro gaming communities. We aim for accuracy to celebrate the legacy of these arcade legends.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer text-center mt-12 border-t border-gray-700">
+    <footer class="footer text-center mt-12 py-8 border-t border-gray-700">
         <div class="container mx-auto">
             <div class="flex justify-center mb-4">
                  <div class="joystick-icon-small animated-joystick-footer"></div>
@@ -116,6 +156,42 @@
         }
 
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // FAQ Accordion Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const questionButton = item.querySelector('.faq-question');
+                const answerDiv = item.querySelector('.faq-answer');
+                const icon = questionButton.querySelector('.faq-icon');
+
+                questionButton.addEventListener('click', () => {
+                    const isCurrentlyOpen = !answerDiv.classList.contains('hidden');
+
+                    // Close all other answers and reset their icons
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-question .faq-icon');
+                        if (otherAnswer !== answerDiv && !otherAnswer.classList.contains('hidden')) {
+                            otherAnswer.classList.add('hidden');
+                            if (otherIcon) {
+                                otherIcon.classList.remove('rotate-180');
+                            }
+                        }
+                    });
+
+                    // Toggle the current answer
+                    if (isCurrentlyOpen) {
+                        answerDiv.classList.add('hidden');
+                        if (icon) icon.classList.remove('rotate-180');
+                    } else {
+                        answerDiv.classList.remove('hidden');
+                        if (icon) icon.classList.add('rotate-180');
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
